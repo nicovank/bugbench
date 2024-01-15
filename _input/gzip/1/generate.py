@@ -14,7 +14,6 @@ def random_name(size: int) -> str:
     )
 
 
-# Generate directories and a file to reach length TOTAL_LENGTH.
 remaining = TOTAL_LENGTH
 path = ROOT
 while remaining > CHUNK_LENGTH:
