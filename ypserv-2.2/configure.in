@@ -138,6 +138,7 @@ AC_ARG_WITH(gdbm-dir,
 
 AC_ARG_WITH(ndbm,
         [  --with-ndbm=[yes|no]             Use ndbm instead of gdbm],
+	[
 	LIBDBM=""
 	if test x$libdb_parameter != xno
 	then
@@ -153,6 +154,7 @@ AC_ARG_WITH(ndbm,
 		fi
 		libdb_parameter=yes
         fi
+  ]
 )
 
 if test x$libdb_parameter != xyes
