@@ -20,7 +20,7 @@
 | HTPD1 | `httpd-2.0.49`     | ✅      |       |              |
 | MSQL1 | `msql-4.1.1`       | ✅      |       |              |
 | MSQL2 | `msql-3.23.56`     | ✅      |       |              |
-| MSQL3 | `msql-4.1.1`       |         |       |              |
+| MSQL3 | `msql-4.1.1`       | ✅      |       |              |
 | PSQL  | `postgresql-7.4.2` |         |       |              |
 | HTPD2 | `httpd2.0.49`      | ✅      |       |              |
 
