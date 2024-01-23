@@ -10,7 +10,7 @@ RUN-GZIP: GZIP
 .PHONY: NCOM, RUN-NCOM
 NCOM:
 	git clean -xfd ncompress-4.2.4; git restore ncompress-4.2.4
-	cd ncompress-4.2.4; cp Makefile.def Makefile; make options="-DDIRENT=1 -DUSERMEM=800000 -DREGISTERS=3 -DNOFUNCDEF=1 $(CFLAGS)"
+	cd ncompress-4.2.4; cp Makefile.def Makefile; make options="$(CFLAGS) -DDIRENT=1 -DUSERMEM=800000 -DREGISTERS=3 -DNOFUNCDEF=1"
 RUN-NCOM: NCOM
 	rm -f _input/NCOM/pjEgA16x4jl0Tp8RYDXUvipsb0VKc3ZqFXx1WWzVoNcddnrOsJaa3LR5Ug1UuyXo5tjSFlccGbOVe5eKrSWy4eYbkbAQbDFP1K4wMW2eOuiAuxhG0W217uadhtos6HBW/lY9oIX4xOiTIGRWRXkxmVQGjCAwEuKcczNpE60MTYfXwLSpa88EYBEqOvPy5C0FmBaF7THs4dFRBFncMx25ctvW1lD4k5YGP6SfquRZAZ7iUEIJxuFKqgvtedvRIoOwx/iqcFaw5mNmKDSrGg83G8hvwIWYZ6A3zjoAEzKfRFPR36hnAAwgttWRJGLfSIHayBrCpB5zH721SeFht2WKQyfQK92B0tpfARQNQX8WxWy19RCv0CbzQr8K8mtArIozBT/ymU3gtwIv1DXim0tq9XiUhhBZxYffOE7wEyXsnJ0oEYssAG2VMg4RsurLB2zeKKbM55WF2MmUtPZYCEfIm38sLdIJQnjzIKa0ImLX5vqGjZFtM8pJp9NmlKYqnDNjBlF/az6qYyWY4kCl3SEOc6sOkswU4zEgNN4ojzukBTdvabNi7AKRqpgLkWBzyMSp5UEs4cQY6lPmqg9RBeR3Y8SzIO27JgtKk01K8GMdz4kHeyQNoRglCcYmOGgPmdVdyJNS/QhyZNL5wHL3lZ6qO5Bxdz82VHGSO7IffDAmsgYixjCHsbiSVNjGtlLkOLhIFuYeaym7Ne8CnHbVRZz7Hqif1N3GdS9wzBEBD1XCVicbPSmA3nqwhn7tgXPiISxn6V0sC/xH4Wa6FCqkWRpK3qGmUlyyRFuMWzKN0Np1WlRf0EKH43X8Vhv9BLeTg8CxNlgieUdGDroMgtd2KAmO5pMlLEwynHrwSJP9qrhZKeJBaIw47WnQwOJML4ZT33Sdvoyh0B/woeaoJTq3O4JZiOZ7bjAgxvwhIH6kQjbNSdexj3bOIt5ConGZ6lGNdo6GTA1ovHI42nrAYPucrbwPEizuhXvM1H6xpsnnsxKeKt2sGOOmA8FgowKn4pEkyfsiVTM2Sac.Z
 	./ncompress-4.2.4/compress _input/NCOM/pjEgA16x4jl0Tp8RYDXUvipsb0VKc3ZqFXx1WWzVoNcddnrOsJaa3LR5Ug1UuyXo5tjSFlccGbOVe5eKrSWy4eYbkbAQbDFP1K4wMW2eOuiAuxhG0W217uadhtos6HBW/lY9oIX4xOiTIGRWRXkxmVQGjCAwEuKcczNpE60MTYfXwLSpa88EYBEqOvPy5C0FmBaF7THs4dFRBFncMx25ctvW1lD4k5YGP6SfquRZAZ7iUEIJxuFKqgvtedvRIoOwx/iqcFaw5mNmKDSrGg83G8hvwIWYZ6A3zjoAEzKfRFPR36hnAAwgttWRJGLfSIHayBrCpB5zH721SeFht2WKQyfQK92B0tpfARQNQX8WxWy19RCv0CbzQr8K8mtArIozBT/ymU3gtwIv1DXim0tq9XiUhhBZxYffOE7wEyXsnJ0oEYssAG2VMg4RsurLB2zeKKbM55WF2MmUtPZYCEfIm38sLdIJQnjzIKa0ImLX5vqGjZFtM8pJp9NmlKYqnDNjBlF/az6qYyWY4kCl3SEOc6sOkswU4zEgNN4ojzukBTdvabNi7AKRqpgLkWBzyMSp5UEs4cQY6lPmqg9RBeR3Y8SzIO27JgtKk01K8GMdz4kHeyQNoRglCcYmOGgPmdVdyJNS/QhyZNL5wHL3lZ6qO5Bxdz82VHGSO7IffDAmsgYixjCHsbiSVNjGtlLkOLhIFuYeaym7Ne8CnHbVRZz7Hqif1N3GdS9wzBEBD1XCVicbPSmA3nqwhn7tgXPiISxn6V0sC/xH4Wa6FCqkWRpK3qGmUlyyRFuMWzKN0Np1WlRf0EKH43X8Vhv9BLeTg8CxNlgieUdGDroMgtd2KAmO5pMlLEwynHrwSJP9qrhZKeJBaIw47WnQwOJML4ZT33Sdvoyh0B/woeaoJTq3O4JZiOZ7bjAgxvwhIH6kQjbNSdexj3bOIt5ConGZ6lGNdo6GTA1ovHI42nrAYPucrbwPEizuhXvM1H6xpsnnsxKeKt2sGOOmA8FgowKn4pEkyfsiVTM2Sac
@@ -18,7 +18,7 @@ RUN-NCOM: NCOM
 .PHONY: BC, RUN-BC
 BC:
 	git clean -xfd bc-1.06; git restore bc-1.06
-	cd bc-1.06; CFLAGS="$(CFLAGS)" bash configure; aclocal; automake --add-missing; make
+	cd bc-1.06; aclocal; automake --add-missing; CFLAGS="$(CFLAGS)" bash configure; make
 RUN-BC: BC
 	./bc-1.06/bc/bc ./_input/BC/bad.b
 
@@ -32,7 +32,7 @@ RUN-YPSV: YPSV
 .PHONY: CVS, RUN-CVS
 CVS:
 	git clean -xfd cvs-1.11.4; git restore cvs-1.11.4
-	cd cvs-1.11.4; bash noautomake.sh --noautoconf; CFLAGS="$(CFLAGS)" bash configure; make
+	cd cvs-1.11.4; bash noautomake.sh --noautoconf; CFLAGS="$(CFLAGS) -m32" bash configure; make
 RUN-CVS: CVS
 
 .PHONY: all
