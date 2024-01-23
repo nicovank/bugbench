@@ -30,6 +30,10 @@
 
 Input obtained from Shan Lu.
 
+### CVS
+
+To avoid changing source code, CVS must be built in 32 bit mode.
+
 ### YPSV
 
 Changes were needed to the build infrastructure, see
