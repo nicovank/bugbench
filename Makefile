@@ -1,10 +1,9 @@
 CFLAGS += -O3 -g
-CXXFLAGS += -O3 -g
 
 .PHONY: GZIP, RUN-GZIP
 GZIP:
 	git clean -xfd gzip-1.2.4; git restore gzip-1.2.4
-	cd gzip-1.2.4; CFLAGS="$(CFLAGS) -std=gnu90" CXXFLAGS="$(CXXFLAGS)" bash configure; make
+	cd gzip-1.2.4; CFLAGS="$(CFLAGS) -std=gnu90" bash configure; make
 RUN-GZIP: GZIP
 	./gzip-1.2.4/gzip _input/GZIP/3DiI39GpdzhhZ28vdkqtr38bfzHnettJ07gPAr96ppKzVx725aTRfFANoiu9ZHEJqmN1Xmic6UVudmW36VXmOy3dKbXqHhl7vd57GnWYLvSEZwUbyLuPE5oIZzHd26Tp/M7g4gkbAjKlDXwRVyVHZW1KwJyKIRtKbCeOrRJmFVkWaFDPNNhaveNvHxNRNG7cRvZ3jE0egyMDWwZBjKy6uRd25slx9BkDtl9aekCpP7fFwD2QwlLRbJO15QuZARDmZ/X7exgvSH5k0kdvlpfMV9Tzfi8lqx6VGbELKYtsIfJJL83L7ZjG2UgFKU5GABkLX2uRdbwTPJ0oWzbdBDrfM67ZTrxjKokpR2E2UDFtFJclvbJeMNkZXblI6BeGkGsxno/H3YwEsRbTbgvrBnl2VYGPPidm2j6SpGKkgtWSCYTdXxmgzDToa6Hf9jQoRFbJEzvDGWpBRpNyIAEPUG0uChg2ojFWdQfWi63YvxKpR3JX1bOWPnnwbX0vQuIQK37ksDY/7avp28eABSTAaBFjlTZ28bVmLN8W3eo8V4A0rmFMwRdrKpKz2X45WwRM05TdjAlHvFzOSR4xlxOsaappoxENXzyfWEAMsc6sSR0PqP2zPkm5EAiAhYnjG5ZWgUCCWflc/svTd5qnR9w1rP0BNEDTcuPKqrOnAFVvOD8ZPPokYeG7FnD2TAERb95w0oDCAEifd7bJp0FsVa6zW9nXrkydf2BFx9Jqq0OXNNgcqIK738C4vDiQFZ1itf1tMymOXAnIP/KMOTYKfAA7P4pmIGicRIp52dPftGzldJTK7Mak3THRgP5uI2Y6Oi3zp0wvr7Hp1Tcdg0bmayRaKD8w5QwgIU0a5XuTmgeEK6nIJZHLOIYdscfJMi8fOQVE35jbaZGkty/Cd0jSLffnNowozhZMU089zqv1fqGGxGys1VQrkTMff9BzNV7kMylj9SO6c3GERd1I5buKA5Z3jHnu9SJiDf2emndJ5tWebDKoVh0KzMMK38FKSsMbSfUAS8oOP2svQ9g
 
@@ -19,21 +18,21 @@ RUN-NCOM: NCOM
 .PHONY: BC, RUN-BC
 BC:
 	git clean -xfd bc-1.06; git restore bc-1.06
-	cd bc-1.06; bash configure; aclocal; automake --add-missing; make
+	cd bc-1.06; CFLAGS="$(CFLAGS)" bash configure; aclocal; automake --add-missing; make
 RUN-BC: BC
 	./bc-1.06/bc/bc ./_input/BC/bad.b
 
 .PHONY: YPSV, RUN-YPSV
 YPSV:
 	git clean -xfd ypserv-2.2; git restore ypserv-2.2
-	cd ypserv-2.2; autoreconf -i; CFLAGS="-I/usr/include/tirpc" LIBS="-ltirpc" bash configure; make
+	cd ypserv-2.2; autoreconf -i; CFLAGS="-I/usr/include/tirpc $(CFLAGS)" LIBS="-ltirpc" bash configure; make
 RUN-YPSV: YPSV
 	
 
 .PHONY: CVS, RUN-CVS
 CVS:
 	git clean -xfd cvs-1.11.4; git restore cvs-1.11.4
-	cd cvs-1.11.4; bash noautomake.sh --noautoconf; CFLAGS="-m32" bash configure; make
+	cd cvs-1.11.4; bash noautomake.sh --noautoconf; CFLAGS="$(CFLAGS)" bash configure; make
 RUN-CVS: CVS
 
 .PHONY: all
