@@ -30,5 +30,11 @@ YPSV:
 RUN-YPSV: YPSV
 	
 
+.PHONY: CVS, RUN-CVS
+CVS:
+	git clean -xfd cvs-1.11.4; git restore cvs-1.11.4
+	cd cvs-1.11.4; bash noautomake.sh --noautoconf; CFLAGS="-m32" bash configure; make
+RUN-CVS: CVS
+
 .PHONY: all
-all: GZIP NCOM
+all: GZIP NCOM BC YPSV CVS
