@@ -5,7 +5,7 @@
 | ID    | Program            | Sources | Build | Reproduction |
 |-------|--------------------|---------|-------|--------------|
 | NCOM  | `ncompress-4.2.4`  | ✅      | ✅    | ✅           |
-| POLY  | `polymorph-0.4.0`  | ✅      |       |              |
+| POLY  | `polymorph-0.4.0`  | ✅      | ✅    | ✅           |
 | GZIP  | `gzip-1.2.4`       | ✅      | ✅    | ✅           |
 | MAN   | `man-1.5h1`        |         |       |              |
 | GO    | `099.go`           |         |       |              |
@@ -25,6 +25,11 @@
 | HTPD2 | `httpd2.0.49`      | ✅      |       |              |
 
 ## Notes
+
+### POLY
+
+Changes were needed to the source code to fix some build errors, see
+[7fc9fca](https://github.com/nicovank/bugbench/commit/7fc9fca339234d825496e23792f04be41744fa06).
 
 ### BC
 
