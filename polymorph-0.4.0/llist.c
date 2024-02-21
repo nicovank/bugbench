@@ -20,7 +20,7 @@
 xtn_t *find_xtn(xtn_t *list, char *suspect){
   xtn_t *tmp;
 
-  for(tmp=list;tmp!=NULL;(struct xtn_t *)tmp=tmp->next){
+  for(tmp=list;tmp!=NULL;tmp=tmp->next){
     if( !strcmp( tmp->x3, suspect ) ) break;
   }
 
@@ -38,7 +38,7 @@ xtn_t *find_xtn(xtn_t *list, char *suspect){
 polym_t *find_dir(polym_t *list, char *suspect){
 	polym_t *tmp;
 
-	for(tmp=list;tmp!=NULL;(struct polym_t *)tmp=tmp->next){
+	for(tmp=list;tmp!=NULL;tmp=tmp->next){
 		if( !strcmp( tmp->dest, suspect ) ) break;
 	}
 
@@ -78,7 +78,7 @@ polym_t *add_dir(polym_t *list, char *victim){
   if( last == NULL ){
     list = tmp;
   }else{
-    (polym_t *)last->next = tmp;
+    last->next = tmp;
   }
   
   return( tmp );
@@ -111,7 +111,7 @@ xtn_t *add_xtn(xtn_t *list, char *victim){
   if( last == NULL ){
     list = tmp;
   }else{
-    (xtn_t *)last->next = tmp;
+    last->next = tmp;
   }
   
   return( tmp );
@@ -129,7 +129,7 @@ xtn_t *find_last_xtn(xtn_t *target){
   
   if( target == NULL ) return( NULL );
 
-  for(run=target;run!=NULL;(struct xtn_t *)run=run->next){
+  for(run=target;run!=NULL;run=run->next){
     if( run->next == NULL ) return( (xtn_t *)run->next );
   }
 
@@ -148,7 +148,7 @@ polym_t *find_last_dir(polym_t *target){
 
   if( target == NULL ) return( NULL );
 
-  for(run=target;run!=NULL;(struct polym_t *)run=run->next){
+  for(run=target;run!=NULL;run=run->next){
     if( run->next == NULL ) return( (polym_t *)run->next );
   }
   
