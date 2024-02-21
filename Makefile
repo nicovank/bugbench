@@ -37,3 +37,7 @@ RUN-CVS: CVS
 
 .PHONY: all
 all: GZIP NCOM BC YPSV CVS
+
+.PHONY: clean
+clean:
+	git clean -xfd .; git restore .
