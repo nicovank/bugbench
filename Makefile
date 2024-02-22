@@ -21,7 +21,7 @@ RUN-NCOM: NCOM
 .PHONY: BC, RUN-BC
 BC:
 	git clean -xfd bc-1.06; git restore bc-1.06
-	cd bc-1.06; aclocal; automake --add-missing; CFLAGS="$(CFLAGS) -std=gnu90" bash configure; make
+	cd bc-1.06; aclocal; automake --add-missing; CFLAGS="$(CFLAGS) -std=gnu90" bash configure; make CFLAGS="$(CFLAGS) -std=gnu90"
 RUN-BC: BC
 	./bc-1.06/bc/bc ./_input/BC/bad.b
 
