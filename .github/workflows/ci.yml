@@ -11,6 +11,7 @@ jobs:
     strategy:
       matrix:
         target: [GZIP, NCOM, BC, YPSV, CVS, POLY]
+        compiler: [gcc-12, clang-17]
 
     runs-on: ubuntu-latest
 
@@ -18,7 +19,11 @@ jobs:
       - uses: actions/checkout@v4.1.1
 
       - name: Install dependencies
-        run: sudo apt install -y bison gcc-multilib libgdbm-dev
+        run: |
+          sudo apt install -y gcc-12 gcc-12-multilib
+          sudo apt install lsb-release wget software-properties-common gnupg
+          curl -sSf https://apt.llvm.org/llvm.sh | sudo bash -s -- 17 all
+          sudo apt install -y bison libgdbm-dev
 
       - name: Make
-        run: make ${{matrix.target}}
+        run: make CC=${{matrix.compiler}} ${{matrix.target}}
