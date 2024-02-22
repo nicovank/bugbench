@@ -18,12 +18,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.1
 
-      - name: Install dependencies
+      - name: Install GCC
+        if: matrix.compiler == 'gcc-12'
+        run: sudo apt install -y gcc-12 gcc-12-multilib
+
+      - name: Install Clang
+        if: matrix.compiler == 'clang-17'
         run: |
-          sudo apt install -y gcc-12 gcc-12-multilib
           sudo apt install lsb-release wget software-properties-common gnupg
           curl -sSf https://apt.llvm.org/llvm.sh | sudo bash -s -- 17 all
-          sudo apt install -y bison libgdbm-dev
+
+      - name: Install dependencies
+        run: sudo apt install -y bison libgdbm-dev
 
       - name: Make
         run: make CC=${{matrix.compiler}} ${{matrix.target}}
