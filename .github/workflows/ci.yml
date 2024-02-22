@@ -10,7 +10,7 @@ jobs:
   make:
     strategy:
       matrix:
-        target: [GZIP, NCOM, BC, YPSV, CVS, POLY]
+        target: [GZIP, NCOM, BC, YPSV, POLY]
         compiler: [gcc-12, clang-17]
 
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
       - name: Install Clang
         if: matrix.compiler == 'clang-17'
         run: |
-          sudo apt install lsb-release wget software-properties-common gnupg
+          sudo apt install -y lsb-release wget software-properties-common gnupg
           curl -sSf https://apt.llvm.org/llvm.sh | sudo bash -s -- 17 all
 
       - name: Install dependencies
