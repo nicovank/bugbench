@@ -10,7 +10,7 @@ jobs:
   make:
     strategy:
       matrix:
-        target: [GZIP, NCOM, BC, YPSV, CVS]
+        target: [GZIP, NCOM, BC, YPSV, CVS, POLY]
 
     runs-on: ubuntu-latest
 
