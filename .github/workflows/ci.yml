@@ -29,7 +29,7 @@ jobs:
           curl -sSf https://apt.llvm.org/llvm.sh | sudo bash -s -- 17 all
 
       - name: Install dependencies
-        run: sudo apt install -y bison libgdbm-dev
+        run: sudo apt install -y automake bison flex libgdbm-dev
 
       - name: Make
         run: make CC=${{matrix.compiler}} ${{matrix.target}}
