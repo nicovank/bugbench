@@ -30,7 +30,6 @@ YPSV:
 	git clean -xfd ypserv-2.2; git restore ypserv-2.2
 	cd ypserv-2.2; autoreconf -i; CFLAGS="-I/usr/include/tirpc $(CFLAGS)" LIBS="-ltirpc" bash configure; make
 RUN-YPSV: YPSV
-	
 
 .PHONY: CVS, RUN-CVS
 CVS:
