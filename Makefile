@@ -1,4 +1,4 @@
-CFLAGS += -O3 -g
+CFLAGS := -O3 -g
 
 .PHONY: all
 all: NCOM POLY GZIP BC
