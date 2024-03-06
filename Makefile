@@ -32,6 +32,11 @@ BC:
 RUN-BC: BC
 	./bc-1.06/bc/bc ./_input/BC/bad.b
 
+.PHONY: SQUD
+SQUD:
+	git clean -xfd squid-2.3; git restore squid-2.3
+	cd squid-2.3; CFLAGS="$(CFLAGS)" bash configure; make
+
 .PHONY: CVS
 CVS:
 	git clean -xfd cvs-1.11.4; git restore cvs-1.11.4

@@ -11,7 +11,7 @@
 | GO    | `099.go`           |         |       |              |
 | COMP  | `129.compress`     |         |       |              |
 | BC    | `bc-1.06`          | ✅      | ✅    | ✅           |
-| SQUD  | `squid-2.3`        |         |       |              |
+| SQUD  | `squid-2.3`        | ✅      | ✅    |              |
 | CALB  | `cachelib-?`       |         |       |              |
 | CVS   | `cvs-1.11.4`       | ✅      | ✅    |              |
 | YPSV  | `ypserv-2.2`       | ✅      | ✅    |              |
@@ -38,6 +38,9 @@ Input obtained from Shan Lu.
 ### SQUD
 
 Full version is `2.3.STABLE5`.
+
+Changes were needed to the source code to fix a build error, see
+[21be15e](https://github.com/nicovank/bugbench/commit/21be15e7c915df46412bd881ff2eb04ce8c78858).
 
 ### CVS
 
