@@ -35,6 +35,10 @@ Changes were needed to the source code to fix some build errors, see
 
 Input obtained from Shan Lu.
 
+### SQUD
+
+Full version is `2.3.STABLE5`.
+
 ### CVS
 
 To avoid changing source code, CVS must be built in 32 bit mode.
