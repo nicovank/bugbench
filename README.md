@@ -24,9 +24,9 @@
 | PSQL  | `postgresql-7.4.2` |         |       |              |
 | HTPD2 | `httpd2.0.49`      | ✓       |       |              |
 
-| ID    | Program             | Sources | Build | Reproduction | Information                                      |
-|-------|---------------------|---------|-------|--------------|--------------------------------------------------|
-| PEG   | `cpp-peglib-0.1.12` | ✓       | ✓     | ✓            | https://github.com/yhirose/cpp-peglib/issues/121 |
+| ID    | Program             | Sources | Build | Reproduction | Information    |
+|-------|---------------------|---------|-------|--------------|----------------|
+| PEG   | `cpp-peglib-0.1.12` | ✓       | ✓     | ✓            | CVE-2020-23914 |
 
 ## Notes
 
