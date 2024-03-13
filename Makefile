@@ -53,7 +53,7 @@ PEG:
 	git clean -xfd cpp-peglib-0.1.12; git restore cpp-peglib-0.1.12
 	cd cpp-peglib-0.1.12; cmake . -B build -DCMAKE_CXX_FLAGS="$(CXXFLAGS)"; cmake --build build --parallel
 RUN-PEG: PEG
-	cd ./cpp-peglib-0.1.12; ./build/lint/peglint --ast --opt ../_input/PEG/SEGV-optimize-peglib-3650 ./pl0/samples/fib.pas
+	./cpp-peglib-0.1.12/build/lint/peglint --ast --opt _input/PEG/SEGV-optimize-peglib-3650 ./cpp-peglib-0.1.12/pl0/samples/fib.pas
 
 .PHONY: clean
 clean:
