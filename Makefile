@@ -1,4 +1,5 @@
-CFLAGS := -O3 -g
+CFLAGS := -g -Og
+CXXFLAGS := $(CFLAGS)
 
 .PHONY: all
 all: NCOM POLY GZIP BC
@@ -46,6 +47,13 @@ CVS:
 YPSV:
 	git clean -xfd ypserv-2.2; git restore ypserv-2.2
 	cd ypserv-2.2; autoreconf -i; CFLAGS="-I/usr/include/tirpc $(CFLAGS)" LIBS="-ltirpc" bash configure; make
+
+.PHONY: PEG, RUN-PEG
+PEG:
+	git clean -xfd cpp-peglib-0.1.12; git restore cpp-peglib-0.1.12
+	cd cpp-peglib-0.1.12; cmake . -B build -DCMAKE_CXX_FLAGS="$(CXXFLAGS)"; cmake --build build --parallel
+RUN-PEG: PEG
+	cd ./cpp-peglib-0.1.12; ./build/lint/peglint --ast --opt ../_input/PEG/SEGV-optimize-peglib-3650 ./pl0/samples/fib.pas
 
 .PHONY: clean
 clean:
