@@ -62,6 +62,13 @@ YAML1:
 RUN-YAML1: YAML1
 	./yaml-cpp-0.6.3/build/util/parse < _input/YAML1/crash2.txt
 
+.PHONY: YAML2, RUN-YAML2
+YAML2:
+	git clean -xfd yaml-cpp-0.6.2; git restore yaml-cpp-0.6.2
+	cmake yaml-cpp-0.6.2 -B yaml-cpp-0.6.2/build -DCMAKE_CXX_FLAGS="$(CXXFLAGS)"; cmake --build yaml-cpp-0.6.2/build --parallel
+RUN-YAML2: YAML2
+	./yaml-cpp-0.6.2/build/util/parse < _input/YAML2/file_poc
+
 .PHONY: clean
 clean:
 	git clean -xfd .; git restore .
