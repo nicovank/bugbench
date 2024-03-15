@@ -59,7 +59,7 @@ RUN-PEG: PEG
 YAML:
 	git clean -xfd yaml-cpp-0.6.3; git restore yaml-cpp-0.6.3
 	cmake yaml-cpp-0.6.3 -B yaml-cpp-0.6.3/build -DCMAKE_CXX_FLAGS="$(CXXFLAGS)"; cmake --build yaml-cpp-0.6.3/build --parallel
-RUN-YAML:
+RUN-YAML: YAML
 	./yaml-cpp-0.6.3/build/util/parse < _input/YAML/crash2.txt
 
 .PHONY: clean

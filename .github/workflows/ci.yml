@@ -10,7 +10,7 @@ jobs:
   make:
     strategy:
       matrix:
-        target: [GZIP, NCOM, BC, YPSV, POLY, PEG]
+        target: [GZIP, NCOM, BC, YPSV, POLY, PEG, YAML]
         compiler: [gcc-12, clang-17]
 
     runs-on: ubuntu-latest
