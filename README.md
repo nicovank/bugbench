@@ -27,6 +27,7 @@
 | ID    | Program             | Sources | Build | Reproduction | Information    |
 |-------|---------------------|---------|-------|--------------|----------------|
 | PEG   | `cpp-peglib-0.1.12` | ✓       | ✓     | ✓            | CVE-2020-23914 |
+| YAML  | `yaml-cpp-0.6.3`    | ✓       | ✓     | ✓            | CVE-2018-20573 |
 
 ## Notes
 
