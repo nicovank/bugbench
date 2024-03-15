@@ -2,6 +2,8 @@
 
 ## Status
 
+### Original BugBench
+
 | ID    | Program            | Sources | Build | Reproduction |
 |-------|--------------------|---------|-------|--------------|
 | NCOM  | `ncompress-4.2.4`  | ✓       | ✓     | ✓            |
@@ -24,10 +26,12 @@
 | PSQL  | `postgresql-7.4.2` |         |       |              |
 | HTPD2 | `httpd2.0.49`      | ✓       |       |              |
 
+### BugsCpp
+
 | ID    | Program             | Sources | Build | Reproduction | Information    |
 |-------|---------------------|---------|-------|--------------|----------------|
 | PEG   | `cpp-peglib-0.1.12` | ✓       | ✓     | ✓            | CVE-2020-23914 |
-| YAML  | `yaml-cpp-0.6.3`    | ✓       | ✓     | ✓            | CVE-2018-20573 |
+| YAML1 | `yaml-cpp-0.6.3`    | ✓       | ✓     | ✓            | CVE-2018-20573 |
 
 ## Notes
 

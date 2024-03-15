@@ -55,12 +55,12 @@ PEG:
 RUN-PEG: PEG
 	./cpp-peglib-0.1.12/build/lint/peglint --ast --opt _input/PEG/SEGV-optimize-peglib-3650 ./cpp-peglib-0.1.12/pl0/samples/fib.pas
 
-.PHONY: YAML, RUN-YAML
-YAML:
+.PHONY: YAML1, RUN-YAML1
+YAML1:
 	git clean -xfd yaml-cpp-0.6.3; git restore yaml-cpp-0.6.3
 	cmake yaml-cpp-0.6.3 -B yaml-cpp-0.6.3/build -DCMAKE_CXX_FLAGS="$(CXXFLAGS)"; cmake --build yaml-cpp-0.6.3/build --parallel
-RUN-YAML: YAML
-	./yaml-cpp-0.6.3/build/util/parse < _input/YAML/crash2.txt
+RUN-YAML1: YAML1
+	./yaml-cpp-0.6.3/build/util/parse < _input/YAML1/crash2.txt
 
 .PHONY: clean
 clean:
