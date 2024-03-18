@@ -67,8 +67,3 @@ Source code is unchanged.
 
 Catch2 needed updating to fix a compilation error, see
 [4b00d31](https://github.com/nicovank/bugbench/commit/4b00d311656bed2b3b8f7a8858e782aa3d168074).
-
-### TIFF
-
-`config.guess` and `config.sub` were updated to fix compilation errors, see
-[bda489c](https://github.com/nicovank/bugbench/commit/bda489caadfb48bd1392eb3c4852c88778dd9185).
