@@ -88,6 +88,7 @@ RUN-LLDB-YAML2:
 .PHONY: TIFF, RUN-TIFF, RUN-LLDB-TIFF
 TIFF:
 	git clean -xfd libtiff-4.0.6; git restore libtiff-4.0.6
+	# aarch64: cd libtiff-4.0.6; CFLAGS="$(CFLAGS)" ./configure --build=aarch64-unknown-linux-gnu; make -j
 	cd libtiff-4.0.6; CFLAGS="$(CFLAGS)" ./configure; make -j
 RUN-TIFF:
 	./libtiff-4.0.6/tools/rgb2ycbcr -c zip -r 0 -h 2 -v 0 ./_input/TIFF/plasma-globe.tiff $(shell mktemp)
