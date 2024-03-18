@@ -94,9 +94,9 @@ else
 	cd libtiff-4.0.6; CFLAGS="$(CFLAGS)" ./configure; make -j
 endif
 RUN-TIFF:
-	./libtiff-4.0.6/tools/rgb2ycbcr -c zip -r 0 -h 2 -v 0 ./_input/TIFF/plasma-globe.tiff $(shell mktemp)
+	./libtiff-4.0.6/tools/.libs/rgb2ycbcr -c zip -r 0 -h 2 -v 0 ./_input/TIFF/plasma-globe.tiff $(shell mktemp)
 RUN-LLDB-TIFF:
-	$(LLDB) -o run -- ./libtiff-4.0.6/tools/rgb2ycbcr -c zip -r 0 -h 2 -v 0 ./_input/TIFF/plasma-globe.tiff $(shell mktemp)
+	$(LLDB) -o run -- ./libtiff-4.0.6/tools/.libs/rgb2ycbcr -c zip -r 0 -h 2 -v 0 ./_input/TIFF/plasma-globe.tiff $(shell mktemp)
 
 .PHONY: clean
 clean:
