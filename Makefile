@@ -1,5 +1,5 @@
-CC=clang-17
-CXX=clang++-17
+CC := clang-17
+CXX := clang++-17
 LLDB := lldb-17
 CFLAGS := -g -Og -fno-omit-frame-pointer
 CXXFLAGS := $(CFLAGS)
