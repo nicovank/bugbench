@@ -33,6 +33,7 @@
 | PEG   | `cpp-peglib-0.1.12` | ✓       | ✓     | ✓            | CVE-2020-23914 |
 | YAML1 | `yaml-cpp-0.6.3`    | ✓       | ✓     | ✓            | CVE-2018-20573 |
 | YAML2 | `yaml-cpp-0.6.2`    | ✓       | ✓     | ✓            | CVE-2017-11692 |
+| TIFF  | `libtiff-4.0.6`     | ✓       | ✓     | ✓            | CVE-2016-3623  |
 
 ## Notes
 
