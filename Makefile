@@ -1,4 +1,4 @@
-CFLAGS := -g -Og
+CFLAGS := -g -Og -fno-omit-frame-pointer
 CXXFLAGS := $(CFLAGS)
 LLDB := lldb
 
