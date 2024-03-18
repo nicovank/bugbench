@@ -1,6 +1,8 @@
-CFLAGS := -g -Og
+CC=clang-17
+CXX=clang++-17
+LLDB := lldb-17
+CFLAGS := -g -Og -fno-omit-frame-pointer
 CXXFLAGS := $(CFLAGS)
-LLDB := lldb
 
 .PHONY: all
 all: NCOM POLY GZIP BC PEG YAML1 YAML2
