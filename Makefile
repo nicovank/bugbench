@@ -63,9 +63,9 @@ PEG:
 	git clean -xfd cpp-peglib-0.1.12; git restore cpp-peglib-0.1.12
 	cmake cpp-peglib-0.1.12 -B cpp-peglib-0.1.12/build -DCMAKE_CXX_FLAGS="$(CXXFLAGS)" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON; cmake --build cpp-peglib-0.1.12/build --parallel; cp cpp-peglib-0.1.12/build/compile_commands.json cpp-peglib-0.1.12
 RUN-PEG:
-	cd ./cpp-peglib-0.1.12; ./build/lint/peglint --ast --opt ../_input/PEG/SEGV-optimize-peglib-3650 ./pl0/samples/fib.pas
+	cd cpp-peglib-0.1.12; ./build/lint/peglint --ast --opt ../_input/PEG/SEGV-optimize-peglib-3650 ./pl0/samples/fib.pas
 RUN-LLDB-PEG:
-	cd ./cpp-peglib-0.1.12; $(LLDB) -o run -- ./build/lint/peglint --ast --opt ../_input/PEG/SEGV-optimize-peglib-3650 ./pl0/samples/fib.pas
+	cd cpp-peglib-0.1.12; $(LLDB) -o run -- ./build/lint/peglint --ast --opt ../_input/PEG/SEGV-optimize-peglib-3650 ./pl0/samples/fib.pas
 
 .PHONY: YAML1, RUN-YAML1, RUN-LLDB-YAML1
 YAML1:
