@@ -11,19 +11,26 @@ jobs:
     strategy:
       matrix:
         target: [GZIP, NCOM, BC, YPSV, POLY, PEG, YAML1, YAML2, TIFF]
-        compiler: [gcc-12, clang-17]
+        include:
+          - CC: gcc-12
+            CXX: g++-12
+          - CC: clang-17
+            CXX: clang++-17
 
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4.1.1
 
+      - name: Install Bear
+        run: sudo apt install -y bear
+
       - name: Install GCC
-        if: matrix.compiler == 'gcc-12'
+        if: matrix.CC == 'gcc-12'
         run: sudo apt install -y gcc-12 gcc-12-multilib
 
       - name: Install Clang
-        if: matrix.compiler == 'clang-17'
+        if: matrix.CC == 'clang-17'
         run: |
           sudo apt install -y lsb-release wget software-properties-common gnupg
           curl -sSf https://apt.llvm.org/llvm.sh | sudo bash -s -- 17 all
@@ -32,4 +39,4 @@ jobs:
         run: sudo apt install -y automake bison flex libgdbm-dev
 
       - name: Make
-        run: make CC=${{matrix.compiler}} ${{matrix.target}}
+        run: make CC=${{matrix.CC}} CC=${{matrix.CXX}} ${{matrix.target}}
