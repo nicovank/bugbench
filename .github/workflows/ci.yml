@@ -39,4 +39,4 @@ jobs:
         run: sudo apt install -y automake bison flex libgdbm-dev
 
       - name: Make
-        run: make CC=${{matrix.CC}} CC=${{matrix.CXX}} ${{matrix.target}}
+        run: make CC=${{matrix.CC}} CXX=${{matrix.CXX}} ${{matrix.target}}
