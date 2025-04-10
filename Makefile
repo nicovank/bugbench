@@ -1,4 +1,4 @@
-CFLAGS := -g -Og -fno-omit-frame-pointer
+CFLAGS := -g -Og -fno-omit-frame-pointer -fsanitize=address
 CXXFLAGS := $(CFLAGS)
 LLDB := lldb
 
