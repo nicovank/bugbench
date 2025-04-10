@@ -53,11 +53,6 @@ CVS:
 	git clean -xfd cvs-1.11.4; git restore cvs-1.11.4
 	cd cvs-1.11.4; bash noautomake.sh --noautoconf; CFLAGS="$(CFLAGS) -m32" bash configure; bear -- make -j
 
-.PHONY: YPSV
-YPSV:
-	git clean -xfd ypserv-2.2; git restore ypserv-2.2
-	cd ypserv-2.2; autoreconf -i; CFLAGS="-I/usr/include/tirpc $(CFLAGS)" LIBS="-ltirpc" bash configure; bear -- make -j
-
 .PHONY: PEG, RUN-PEG, RUN-LLDB-PEG
 PEG:
 	git clean -xfd cpp-peglib-0.1.12; git restore cpp-peglib-0.1.12
