@@ -16,7 +16,7 @@
 | SQUD  | `squid-2.3`        | ✓       | ✓     |              |
 | CALB  | `cachelib-?`       |         |       |              |
 | CVS   | `cvs-1.11.4`       | ✓       | ✓     |              |
-| YPSV  | `ypserv-2.2`       | ✓       | ✓     |              |
+| YPSV  | `ypserv-2.2`       | ✓       |       |              |
 | PFTP  | `proftpd-1.2.9`    |         |       |              |
 | SQUD2 | `squid-2.4`        |         |       |              |
 | HTPD1 | `httpd-2.0.49`     | ✓       |       |              |
