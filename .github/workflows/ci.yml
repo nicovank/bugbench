@@ -26,7 +26,7 @@ jobs:
       - name: Install Clang
         run: |
           sudo apt install -y lsb-release wget software-properties-common gnupg
-          curl -sSf https://apt.llvm.org/llvm.sh | sudo bash -s -- 17 all
+          curl -sSf https://apt.llvm.org/llvm.sh | sudo bash -s -- 20 all
 
       - name: Install dependencies
         run: sudo apt install -y automake bison flex libgdbm-dev
@@ -39,4 +39,4 @@ jobs:
       - name: Make with clang/clang++
         run: |
           make clean
-          make CC=clang-17 CXX=clang++-17 ${{matrix.target}}
+          make CC=clang-20 CXX=clang++-20 ${{matrix.target}}
