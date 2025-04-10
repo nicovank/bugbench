@@ -45,6 +45,7 @@ Changes were needed to the source code to fix some build errors, see
 ### BC
 
 Input obtained from Shan Lu.
+A minor change was needed in `doc/bc.texi`.
 
 ### SQUD
 
