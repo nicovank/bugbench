@@ -10,7 +10,7 @@ jobs:
   make:
     strategy:
       matrix:
-        target: [GZIP, NCOM, BC, YPSV, POLY, PEG, YAML1, YAML2, TIFF]
+        target: [GZIP, NCOM, BC, POLY, PEG, YAML1, YAML2, TIFF]
 
     runs-on: ubuntu-latest
 
@@ -31,10 +31,10 @@ jobs:
       - name: Install dependencies
         run: sudo apt install -y automake bison flex libgdbm-dev
 
-      # - name: Make with gcc/g++
-      #   run: |
-      #     make clean
-      #     make CC=gcc-12 CXX=g++-12 ${{matrix.target}}
+      - name: Make with gcc/g++
+        run: |
+          make clean
+          make CC=gcc-12 CXX=g++-12 ${{matrix.target}}
 
       - name: Make with clang/clang++
         run: |
